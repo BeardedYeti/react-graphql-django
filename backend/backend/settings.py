@@ -39,8 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'todo' # Add apps here
+    'todo',
+    'graphene_django'
+    # Add apps here
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'backend.schema.schema'
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

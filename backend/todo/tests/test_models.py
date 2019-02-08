@@ -1,4 +1,4 @@
-# File: ./backend/simple_app/tests/test_models.py
+# File: ./backend/todo/tests/test_models.py
 
 import pytest
 from mixer.backend.django import mixer

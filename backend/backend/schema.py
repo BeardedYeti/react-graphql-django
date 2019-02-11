@@ -10,4 +10,10 @@ class Queries(
 ):
     dummy = graphene.String()
 
-schema = graphene.Schema(query=Queries)
+class Mutations(
+    todo.schema.Mutation,
+    graphene.ObjectType
+):
+    pass
+
+schema = graphene.Schema(query=Queries, mutation=Mutations)

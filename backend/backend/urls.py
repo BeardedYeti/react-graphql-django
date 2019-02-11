@@ -20,6 +20,9 @@ from django.urls import path, include
 from rest_framework import routers
 from todo import views
 from graphene_django.views import GraphQLView
+from rest_framework_jwt.views import obtain_jwt_token
+from rest_framework_jwt.views import refresh_jwt_token
+from rest_framework_jwt.views import verify_jwt_token
 
 router = routers.DefaultRouter()
 router.register(r'todos', views.TodoView, 'todo')
@@ -29,4 +32,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('graphiql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path('gql', csrf_exempt(GraphQLView.as_view(batch=True))),
+    path('token-auth/', obtain_jwt_token),
+    path('token-refresh/', refresh_jwt_token),
+    path('token-verify/', verify_jwt_token),
 ]

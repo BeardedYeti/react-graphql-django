@@ -1,21 +1,23 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import CreateView from './views/CreateView'
-import DetailView from './views/DetailView'
-import ListView from './views/ListView'
-import LoginView from './views/LoginView'
-import LogoutView from './views/LogoutView'
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import CreateView from './views/CreateView';
+import DetailView from './views/DetailView';
+import ListView from './views/ListView';
+import LoginView from './views/LoginView';
+import LogoutView from './views/LogoutView';
 import { ApolloClient } from 'apollo-client';
-import { createHttpLink } from 'apollo-link-http';
+//import { createHttpLink } from 'apollo-link-http';
+import { BatchHttpLink } from 'apollo-link-batch-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloProvider } from 'react-apollo';
 
+const batchLink = new BatchHttpLink({
+  uri: 'http://localhost:8000/gql',
+  credentials: 'same-origin',
+})
+
 const client = new ApolloClient({
-  link: createHttpLink({ 
-    uri: 'http://localhost:8000/gql',
-    batchInterval: 10,
-    credentials: 'same-origin',
-  }),
+  link: batchLink,
   cache: new InMemoryCache(),
 })
 

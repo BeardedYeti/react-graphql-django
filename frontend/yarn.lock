@@ -1098,6 +1098,20 @@ apollo-client@^2.4.13:
     tslib "^1.9.3"
     zen-observable "^0.8.0"
 
+apollo-link-batch-http@^1.2.8:
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/apollo-link-batch-http/-/apollo-link-batch-http-1.2.8.tgz#8549e1515a955afbd23c67a144cb045f3b0e85b2"
+  dependencies:
+    apollo-link "^1.2.8"
+    apollo-link-batch "^1.1.9"
+    apollo-link-http-common "^0.2.10"
+
+apollo-link-batch@^1.1.9:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/apollo-link-batch/-/apollo-link-batch-1.1.9.tgz#d19154296adbedcfcf1f6f55b83b41e4c957e8d9"
+  dependencies:
+    apollo-link "^1.2.8"
+
 apollo-link-dedup@^1.0.0:
   version "1.0.15"
   resolved "https://registry.yarnpkg.com/apollo-link-dedup/-/apollo-link-dedup-1.0.15.tgz#028148f1028e806a9ab2f4abf3bde9dc292565e9"

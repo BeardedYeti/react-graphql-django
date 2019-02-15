@@ -6,6 +6,7 @@
   "dependencies": {
     "apollo-cache-inmemory": "^1.4.3",
     "apollo-client": "^2.4.13",
+    "apollo-link-batch-http": "^1.2.8",
     "apollo-link-http": "^1.5.11",
     "axios": "^0.18.0",
     "bootstrap": "^4.2.1",

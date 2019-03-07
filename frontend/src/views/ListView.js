@@ -13,10 +13,10 @@ const MESSAGES_QUERY = gql`
   }
 `
 
-const ListView = ({ refetch }) => (
+const ListView = () => (
   <Query
     query={MESSAGES_QUERY}
-    fetchPolicy={refetch ? 'cache-and-network' : 'cache-first'}
+    fetchPolicy={'cache-first'}
   >
     {({ loading, error, data }) => {
       if (loading) return <span>Loading...</span>
